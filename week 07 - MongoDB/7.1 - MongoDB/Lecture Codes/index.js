@@ -4,9 +4,10 @@ const jwt = require("jsonwebtoken");
 
 const {UserModel, TodoModel} = require("./db");
 const {auth, JWT_SECRET} = require("./auth");
+require('dotenv').config(); // We use this(dotenv library) to read data from the .env file
 
 // if database doesn't exists on this cluster, then create a new database with this name - todo-charan
-mongoose.connect("mongodb+srv://charandeep0288:0gVSNaFAV2v7tfts@cluster0.2emmk.mongodb.net/todo-charan"); 
+mongoose.connect(process.env.DB_CONNECTION_URL); 
 
 const app = express();
 
