@@ -7,7 +7,7 @@ const {auth, JWT_SECRET} = require("./auth");
 require('dotenv').config(); // We use this(dotenv library) to read data from the .env file
 
 // if database doesn't exists on this cluster, then create a new database with this name - todo-charan
-mongoose.connect(process.env.DB_CONNECTION_URL); 
+mongoose.connect(process.env.DB_CONNECTION_URL); // getting this value from the .env file -> process.env.DB_CONNECTION_URL 
 
 const app = express();
 
